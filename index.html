@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EBAD Tax &amp; Accounting | Australian Tax, BAS &amp; Advisory</title>
+  
+  <!-- Calendly Widget Assets -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
   <style>
     :root {
       --primary: #0f766e;
@@ -69,6 +74,7 @@
       font-weight: 500;
       margin-left: 1.5rem;
       font-size: 0.95rem;
+      cursor: pointer;
     }
     nav a:hover { color: var(--primary); }
 
@@ -185,6 +191,18 @@
     .res-table td:last-child { text-align: right; font-weight: 600; }
     .disclaimer { font-size: 0.75rem; color: #64748b; margin-top: 1rem; line-height: 1.4; }
 
+    /* Form Status Alert */
+    #formStatus {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #f0fdfa;
+      border: 1px solid #2dd4bf;
+      color: #115e59;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
     /* Footer */
     footer {
       background: var(--dark);
@@ -210,7 +228,7 @@
       <nav>
         <a href="#services">Services</a>
         <a href="#calculator">Tax Estimator</a>
-        <a href="onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;">Book Appointment</a>
+        <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;">Book Appointment</a>
       </nav>
     </div>
   </header>
@@ -251,7 +269,7 @@
     </div>
   </section>
 
-  <!-- INTERACTIVE CALCULATOR & CRAZYTEL SMS CALLBACK FORM -->
+  <!-- INTERACTIVE TOOLS SECTION -->
   <section class="tools-wrapper">
     <div class="container">
       <div class="tools-grid">
@@ -301,136 +319,176 @@
           </div>
 
           <p class="disclaimer">
-Disclaimer: Estimate only for Australian tax residents. Includes Low Income Tax Offset (LITO) and 2% Medicare levy; excludes HELP/HECS repayments and Medicare Levy Surcharge.
+            Disclaimer: Estimate only for Australian tax residents. Includes Low Income Tax Offset (LITO) and 2% Medicare levy; excludes HELP/HECS repayments and Medicare Levy Surcharge.
+          </p>
+        </div>
 
-Book an Appointment via SMS
-Leave your details below. You will receive an instant SMS confirmation and our team will contact you to confirm your time.
-Full Name
-Australian Mobile Number
-What do you need help with?
-Individual Tax Return
-Quarterly / Monthly BAS
-PAYG & Bookkeeping
-Business Advisory / ABN
+        <!-- RIGHT COLUMN: SMS CALLBACK FORM -->
+        <div id="contact-form" class="widget-box">
+          <h3>Book an Appointment via SMS</h3>
+          <p class="sub">Leave your details below. You will receive an instant confirmation and our team will contact you.</p>
 
-Preferred Contact Time
-Anytime during business hours
-Morning (9am – 12pm)
-Afternoon (12pm – 5pm)
+          <form id="leadForm" onsubmit="handleLeadSubmit(event)">
+            <div class="form-group">
+              <label for="leadName">Full Name</label>
+              <input type="text" id="leadName" placeholder="e.g. Sarah Smith" required>
+            </div>
 
-Request SMS Callback
-EBAD Tax & Accounting | Melbourne, Victoria, Australia
-© 2026 ebad.com.au. All rights reserved.
+            <div class="form-group">
+              <label for="leadPhone">Australian Mobile Number</label>
+              <input type="tel" id="leadPhone" placeholder="e.g. 0412 345 678" required>
+            </div>
 
-             <footer>
+            <div class="form-group">
+              <label for="leadService">What do you need help with?</label>
+              <select id="leadService">
+                <option value="Individual Tax Return">Individual Tax Return</option>
+                <option value="Quarterly / Monthly BAS">Quarterly / Monthly BAS</option>
+                <option value="PAYG & Bookkeeping">PAYG &amp; Bookkeeping</option>
+                <option value="Business Advisory / ABN">Business Advisory / ABN</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="leadTime">Preferred Contact Time</label>
+              <select id="leadTime">
+                <option value="Anytime during business hours">Anytime during business hours</option>
+                <option value="Morning (9am – 12pm)">Morning (9am – 12pm)</option>
+                <option value="Afternoon (12pm – 5pm)">Afternoon (12pm – 5pm)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Request SMS Callback</button>
+          </form>
+
+          <div id="formStatus"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
     <p><strong>EBAD Tax &amp; Accounting</strong> | Melbourne, Victoria, Australia</p>
     <p>&copy; 2026 ebad.com.au. All rights reserved.</p>
   </footer>
-            <script>
-// 1. Dynamic ATO Due-Date Countdown Banner
-function updateATOBanner() {
-const today = new Date();
-today.setHours(0, 0, 0, 0);
-const deadlines = [
-{ name: 'Q1 BAS Lodgment & Payment (Electronic/Agent)', date: new Date('2026-11-25') },
-{ name: 'Q2 Super Guarantee Contributions Due', date: new Date('2027-01-28') },
-{ name: 'Q2 BAS Lodgment & Payment Due', date: new Date('2027-02-28') },
-{ name: 'Q3 BAS Lodgment & Payment Due', date: new Date('2027-04-28') },
-{ name: 'Tax Agent Individual & Company Tax Return Cutoff', date: new Date('2027-05-15') },
-{ name: 'End of Financial Year (2026–27) Tax Planning', date: new Date('2027-06-30') }
-];
-const upcoming = deadlines
-.map(d => ({ ...d, diffDays: Math.ceil((d.date - today) / (1000 * 60 * 60 * 24)) }))
-.filter(d => d.diffDays >= 0)
-.sort((a, b) => a.diffDays - b.diffDays);
-const bannerText = document.getElementById('ato-banner-text');
-if (upcoming.length > 0) {
-const next = upcoming[0];
-const dayStr = next.diffDays === 0 ? 'today!' : 'in ' + next.diffDays + ' day' + (next.diffDays === 1 ? '' : 's');
-const dateFormatted = next.date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
-bannerText.innerHTML = 'ATO Deadline Alert: ' + next.name + ' is due ' + dayStr + ' (' + dateFormatted + '). Book your lodgment now';
-} else {
-bannerText.innerHTML = 'Need help with your Australian tax return or BAS? Book an appointment today';
-}
-}
-updateATOBanner();
-// 2. Australian Tax Refund Calculator Logic
-function calculateAustralianTax() {
-const year = document.getElementById('taxYear').value;
-const gross = Math.max(0, parseFloat(document.getElementById('grossIncome').value) || 0);
-const deductions = Math.max(0, parseFloat(document.getElementById('deductions').value) || 0);
-const withheld = Math.max(0, parseFloat(document.getElementById('taxWithheld').value) || 0);
-const taxableIncome = Math.max(0, gross - deductions);
-// 2025-26 uses 16% on $18,201-$45,000; 2026-27 drops to 15%
-const rate2 = (year === '2026-27') ? 0.15 : 0.16;
-const maxTax2 = (45000 - 18200) * rate2;
-let baseTax = 0;
-if (taxableIncome > 190000) {
-baseTax = maxTax2 + (135000 - 45000) * 0.30 + (190000 - 135000) * 0.37 + (taxableIncome - 190000) * 0.45;
-} else if (taxableIncome > 135000) {
-baseTax = maxTax2 + (135000 - 45000) * 0.30 + (taxableIncome - 135000) * 0.37;
-} else if (taxableIncome > 45000) {
-baseTax = maxTax2 + (taxableIncome - 45000) * 0.30;
-} else if (taxableIncome > 18200) {
-baseTax = (taxableIncome - 18200) * rate2;
-}
-// Low Income Tax Offset (LITO)
-let lito = 0;
-if (taxableIncome <= 37500) lito = 700;
-else if (taxableIncome <= 45000) lito = 700 - (taxableIncome - 37500) * 0.05;
-else if (taxableIncome < 66667) lito = 325 - (taxableIncome - 45000) * 0.015;
-const netIncomeTax = Math.max(0, baseTax - Math.max(0, lito));
-// Medicare Levy (2% with low-income shade-in)
-let medicareLevy = 0;
-if (taxableIncome > 35013) medicareLevy = taxableIncome * 0.02;
-else if (taxableIncome > 28011) medicareLevy = (taxableIncome - 28011) * 0.10;
-const totalTax = netIncomeTax + medicareLevy;
-const diff = withheld - totalTax;
-const fmt = function(n) { return '$' + Math.round(n).toLocaleString('en-AU'); };
-document.getElementById('resTaxable').textContent = fmt(taxableIncome);
-document.getElementById('resIncomeTax').textContent = fmt(netIncomeTax);
-document.getElementById('resMedicare').textContent = fmt(medicareLevy);
-document.getElementById('resTotalTax').textContent = fmt(totalTax);
-document.getElementById('resWithheld').textContent = fmt(withheld);
-const headline = document.getElementById('resultHeadline');
-if (diff >= 0) {
-headline.style.color = '#0f766e';
-headline.textContent = 'Estimated Refund: ' + fmt(diff);
-} else {
-headline.style.color = '#b91c1c';
-headline.textContent = 'Estimated Tax Payable: ' + fmt(Math.abs(diff));
-}
-document.getElementById('taxResultBox').style.display = 'block';
-}
-// 3. Lead Form Submission (Ready to connect to Make/Zapier/Crazytel Webhook)
-async function handleLeadSubmit(e) {
-e.preventDefault();
-const name = document.getElementById('leadName').value;
-const phone = document.getElementById('leadPhone').value;
-const service = document.getElementById('leadService').value;
-const time = document.getElementById('leadTime').value;
-// Optional: Paste your Make.com / Zapier / Webhook URL inside the quotes below to trigger real Crazytel SMS
-const WEBHOOK_URL = "";
-if (WEBHOOK_URL) {
-try {
-await fetch(WEBHOOK_URL, {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify({ name: name, phone: phone, service: service, time: time, source: 'ebad.com.au' })
-});
-} catch (err) {
-console.error('Webhook error:', err);
-}
-}
-const status = document.getElementById('formStatus');
-status.style.display = 'block';
-status.textContent = 'Thank you, ' + name + '! We have registered your request for ' + service + ' and will SMS ' + phone + ' shortly to confirm your appointment.';
-document.getElementById('leadForm').reset();
-}
-    </script>
-          
-  <link href="https://calendly.com" rel="stylesheet">
-  <script src="https://calendly.com" type="text/javascript" async></script>
 
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // 1. Dynamic ATO Due-Date Countdown Banner
+    function updateATOBanner() {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const deadlines = [
+        { name: 'Q1 BAS Lodgment & Payment (Electronic/Agent)', date: new Date('2026-11-25') },
+        { name: 'Q2 Super Guarantee Contributions Due', date: new Date('2027-01-28') },
+        { name: 'Q2 BAS Lodgment & Payment Due', date: new Date('2027-02-28') },
+        { name: 'Q3 BAS Lodgment & Payment Due', date: new Date('2027-04-28') },
+        { name: 'Tax Agent Individual & Company Tax Return Cutoff', date: new Date('2027-05-15') },
+        { name: 'End of Financial Year (2026–27) Tax Planning', date: new Date('2027-06-30') }
+      ];
+      const upcoming = deadlines
+        .map(d => ({ ...d, diffDays: Math.ceil((d.date - today) / (1000 * 60 * 60 * 24)) }))
+        .filter(d => d.diffDays >= 0)
+        .sort((a, b) => a.diffDays - b.diffDays);
+      
+      const bannerText = document.getElementById('ato-banner-text');
+      if (upcoming.length > 0) {
+        const next = upcoming[0];
+        const dayStr = next.diffDays === 0 ? 'today!' : 'in ' + next.diffDays + ' day' + (next.diffDays === 1 ? '' : 's');
+        const dateFormatted = next.date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+        bannerText.innerHTML = 'ATO Deadline Alert: ' + next.name + ' is due ' + dayStr + ' (' + dateFormatted + '). <a href="#calculator">Book your lodgment now</a>';
+      } else {
+        bannerText.innerHTML = 'Need help with your Australian tax return or BAS? <a href="#contact-form">Book an appointment today</a>';
+      }
+    }
+    updateATOBanner();
+
+    // 2. Australian Tax Refund Calculator Logic
+    function calculateAustralianTax() {
+      const year = document.getElementById('taxYear').value;
+      const gross = Math.max(0, parseFloat(document.getElementById('grossIncome').value) || 0);
+      const deductions = Math.max(0, parseFloat(document.getElementById('deductions').value) || 0);
+      const withheld = Math.max(0, parseFloat(document.getElementById('taxWithheld').value) || 0);
+      const taxableIncome = Math.max(0, gross - deductions);
+
+      // Tax rates
+      const rate2 = (year === '2026-27') ? 0.15 : 0.16;
+      const maxTax2 = (45000 - 18200) * rate2;
+      let baseTax = 0;
+
+      if (taxableIncome > 190000) {
+        baseTax = maxTax2 + (135000 - 45000) * 0.30 + (190000 - 135000) * 0.37 + (taxableIncome - 190000) * 0.45;
+      } else if (taxableIncome > 135000) {
+        baseTax = maxTax2 + (135000 - 45000) * 0.30 + (taxableIncome - 135000) * 0.37;
+      } else if (taxableIncome > 45000) {
+        baseTax = maxTax2 + (taxableIncome - 45000) * 0.30;
+      } else if (taxableIncome > 18200) {
+        baseTax = (taxableIncome - 18200) * rate2;
+      }
+
+      // Low Income Tax Offset (LITO)
+      let lito = 0;
+      if (taxableIncome <= 37500) lito = 700;
+      else if (taxableIncome <= 45000) lito = 700 - (taxableIncome - 37500) * 0.05;
+      else if (taxableIncome < 66667) lito = 325 - (taxableIncome - 45000) * 0.015;
+
+      const netIncomeTax = Math.max(0, baseTax - Math.max(0, lito));
+
+      // Medicare Levy (2% with low-income shade-in)
+      let medicareLevy = 0;
+      if (taxableIncome > 35013) medicareLevy = taxableIncome * 0.02;
+      else if (taxableIncome > 28011) medicareLevy = (taxableIncome - 28011) * 0.10;
+
+      const totalTax = netIncomeTax + medicareLevy;
+      const diff = withheld - totalTax;
+      const fmt = function(n) { return '$' + Math.round(n).toLocaleString('en-AU'); };
+
+      document.getElementById('resTaxable').textContent = fmt(taxableIncome);
+      document.getElementById('resIncomeTax').textContent = fmt(netIncomeTax);
+      document.getElementById('resMedicare').textContent = fmt(medicareLevy);
+      document.getElementById('resTotalTax').textContent = fmt(totalTax);
+      document.getElementById('resWithheld').textContent = fmt(withheld);
+
+      const headline = document.getElementById('resultHeadline');
+      if (diff >= 0) {
+        headline.style.color = '#0f766e';
+        headline.textContent = 'Estimated Refund: ' + fmt(diff);
+      } else {
+        headline.style.color = '#b91c1c';
+        headline.textContent = 'Estimated Tax Payable: ' + fmt(Math.abs(diff));
+      }
+      document.getElementById('taxResultBox').style.display = 'block';
+    }
+
+    // 3. Lead Form Submission (Webhook Integration)
+    async function handleLeadSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('leadName').value;
+      const phone = document.getElementById('leadPhone').value;
+      const service = document.getElementById('leadService').value;
+      const time = document.getElementById('leadTime').value;
+
+      // Optional: Paste your Make.com / Zapier / Crazytel Webhook URL inside the quotes below
+      const WEBHOOK_URL = "";
+      if (WEBHOOK_URL) {
+        try {
+          await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name, phone: phone, service: service, time: time, source: 'ebad.com.au' })
+          });
+        } catch (err) {
+          console.error('Webhook error:', err);
+        }
+      }
+
+      const status = document.getElementById('formStatus');
+      status.style.display = 'block';
+      status.textContent = 'Thank you, ' + name + '! We have registered your request for ' + service + ' and will SMS ' + phone + ' shortly to confirm your appointment.';
+      document.getElementById('leadForm').reset();
+    }
+  </script>
 </body>
 </html>
