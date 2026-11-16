@@ -210,6 +210,7 @@
       <nav>
         <a href="#services">Services</a>
         <a href="#calculator">Tax Estimator</a>
+        href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;"
         <a href="#contact-form">Book Appointment</a>
       </nav>
     </div>
@@ -427,8 +428,9 @@ status.style.display = 'block';
 status.textContent = 'Thank you, ' + name + '! We have registered your request for ' + service + ' and will SMS ' + phone + ' shortly to confirm your appointment.';
 document.getElementById('leadForm').reset();
 }
-
-
     </script>
+
+  <link href="https://calendly.com/elitebusinessad" rel="stylesheet">
+  <script src="https://calendly.com" type="text/javascript" async></script>
 </body>
 </html>
