@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EBAD Tax & Accounting | Australian Tax, BAS & Advisory</title>
+  <title>EBAD Tax &amp; Accounting | Australian Tax, BAS &amp; Advisory</title>
   <style>
     :root {
       --primary: #0f766e;
@@ -14,29 +14,102 @@
       --border: #e2e8f0;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text); line-height: 1.6; background: #ffffff; }
-    
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: #ffffff;
+    }
+
     /* Dynamic ATO Banner */
-    #ato-banner { background: var(--dark); color: #f8fafc; text-align: center; padding: 0.75rem 1rem; font-size: 0.9rem; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); }
-    #ato-banner a { color: #2dd4bf; font-weight: 600; text-decoration: underline; margin-left: 6px; }
+    #ato-banner {
+      background: var(--dark);
+      color: #f8fafc;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--primary);
+    }
+    #ato-banner a {
+      color: #2dd4bf;
+      font-weight: 600;
+      text-decoration: underline;
+      margin-left: 6px;
+    }
 
     /* Navigation */
-    header { background: #ffffff; border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; }
-    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .logo { font-size: 1.4rem; font-weight: 800; color: var(--dark); text-decoration: none; letter-spacing: -0.5px; }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dark);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
     .logo span { color: var(--primary); }
-    nav a { color: var(--text); text-decoration: none; font-weight: 500; margin-left: 1.5rem; font-size: 0.95rem; }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+    }
     nav a:hover { color: var(--primary); }
 
     /* Hero Section */
-    .hero { background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%); padding: 4.5rem 1.5rem; text-align: center; border-bottom: 1px solid var(--border); }
+    .hero {
+      background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
+      padding: 4.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
     .hero-inner { max-width: 760px; margin: 0 auto; }
-    .hero h1 { font-size: 2.4rem; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
-    .hero p { font-size: 1.1rem; color: #475569; margin-bottom: 2rem; }
-    .btn { display: inline-block; padding: 0.85rem 1.75rem; border-radius: 6px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; font-size: 1rem; transition: background 0.2s; }
+    .hero h1 {
+      font-size: 2.35rem;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #475569;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
     .btn-primary { background: var(--primary); color: #ffffff; }
     .btn-primary:hover { background: var(--primary-dark); }
-    .btn-outline { background: #ffffff; color: var(--dark); border: 1px solid #cbd5e1; margin-left: 0.75rem; }
+    .btn-outline {
+      background: #ffffff;
+      color: var(--dark);
+      border: 1px solid #cbd5e1;
+      margin-left: 0.75rem;
+    }
 
     /* Layout Container */
     .container { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
@@ -45,22 +118,67 @@
     .section-title p { color: #64748b; }
 
     /* Services Grid */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-    .card { background: #ffffff; border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
     .card h3 { color: var(--dark); margin-bottom: 0.5rem; font-size: 1.2rem; }
 
-    /* Two-Column Interactive Tools Section */
-    .tools-wrapper { background: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: start; }
-    .widget-box { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 1.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    /* Interactive Tools Section */
+    .tools-wrapper {
+      background: var(--bg-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      align-items: start;
+    }
+    .widget-box {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
     .widget-box h3 { color: var(--dark); font-size: 1.35rem; margin-bottom: 0.35rem; }
     .widget-box .sub { font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem; }
     .form-group { margin-bottom: 1rem; }
-    .form-group label { display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem; color: var(--dark); }
-    .form-group input, .form-group select { width: 100%; padding: 0.65rem; border: 1px solid #94a3b8; border-radius: 6px; font-size: 0.95rem; }
-    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 0.35rem;
+      color: var(--dark);
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.65rem;
+      border: 1px solid #94a3b8;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
     /* Calculator Results */
-    #taxResultBox { display: none; margin-top: 1.25rem; padding: 1.25rem; border-radius: 8px; background: #f8fafc; border: 1px solid #cbd5e1; }
+    #taxResultBox {
+      display: none;
+      margin-top: 1.25rem;
+      padding: 1.25rem;
+      border-radius: 8px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+    }
     #resultHeadline { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
     .res-table { width: 100%; font-size: 0.9rem; border-collapse: collapse; }
     .res-table td { padding: 4px 0; }
@@ -68,7 +186,13 @@
     .disclaimer { font-size: 0.75rem; color: #64748b; margin-top: 1rem; line-height: 1.4; }
 
     /* Footer */
-    footer { background: var(--dark); color: #cbd5e1; padding: 2.5rem 1.5rem; text-align: center; font-size: 0.9rem; }
+    footer {
+      background: var(--dark);
+      color: #cbd5e1;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
     footer p { margin-bottom: 0.5rem; }
   </style>
 </head>
@@ -76,7 +200,7 @@
 
   <!-- 1. DYNAMIC ATO DUE-DATE BANNER -->
   <div id="ato-banner">
-    <span id="ato-banner-text">Loading upcoming Australian ATO & BAS due dates...</span>
+    <span id="ato-banner-text">Loading upcoming Australian ATO &amp; BAS due dates...</span>
   </div>
 
   <!-- HEADER -->
@@ -94,8 +218,8 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>Smart Tax, BAS & Accounting Solutions for Australians</h1>
-      <p>Maximize your tax refund, stay ahead of ATO lodgment deadlines, and get fast, reliable support from our Australian team.</p>
+      <h1>Smart Tax, BAS &amp; Accounting Solutions for Australians</h1>
+      <p>Maximise your tax refund, stay ahead of ATO lodgment deadlines, and get fast, reliable support from our Australian team.</p>
       <a href="#calculator" class="btn btn-primary">Estimate Your Tax Refund</a>
       <a href="#contact-form" class="btn btn-outline">Request an SMS Callback</a>
     </div>
@@ -113,15 +237,15 @@
         <p>Fast, accurate income tax preparation ensuring you claim every eligible work-related deduction and offset.</p>
       </div>
       <div class="card">
-        <h3>BAS & GST Lodgments</h3>
+        <h3>BAS &amp; GST Lodgments</h3>
         <p>On-time quarterly and monthly Business Activity Statements so you never miss an ATO deadline or incur penalties.</p>
       </div>
       <div class="card">
-        <h3>PAYG & Bookkeeping</h3>
+        <h3>PAYG &amp; Bookkeeping</h3>
         <p>Streamlined payroll, PAYG instalment management, and cloud accounting setup for stress-free cash flow.</p>
       </div>
       <div class="card">
-        <h3>Business Structure & Tax Advice</h3>
+        <h3>Business Structure &amp; Tax Advice</h3>
         <p>ABN registration, company setup, and proactive tax planning tailored to Australian small businesses.</p>
       </div>
     </div>
@@ -131,7 +255,7 @@
   <section class="tools-wrapper">
     <div class="container">
       <div class="tools-grid">
-        
+
         <!-- LEFT COLUMN: AUSTRALIAN TAX REFUND ESTIMATOR -->
         <div id="calculator" class="widget-box">
           <h3>Australian Tax Refund Estimator</h3>
@@ -177,15 +301,128 @@
           </div>
 
           <p class="disclaimer">
-            <strong>Disclaimer:</strong> Estimate only for Australian tax residents. Includes Low Income Tax Offset (LITO) and 2% Medicare levy; excludes HELP/HECS repayments and Medicare Levy Surcharge.
-          </p>
-        </div>
+Disclaimer: Estimate only for Australian tax residents. Includes Low Income Tax Offset (LITO) and 2% Medicare levy; excludes HELP/HECS repayments and Medicare Levy Surcharge.
 
-        <!-- RIGHT COLUMN: CRAZYTEL SMS CALLBACK / BOOKING FORM -->
-        <div id="contact-form" class="widget-box">
-          <h3>Book an Appointment via SMS</h3>
-          <p class="sub">Leave your details below. You will receive an instant SMS confirmation and our team will contact you to confirm your time.</p>
+Book an Appointment via SMS
+Leave your details below. You will receive an instant SMS confirmation and our team will contact you to confirm your time.
+Full Name
+Australian Mobile Number
+What do you need help with?
+Individual Tax Return
+Quarterly / Monthly BAS
+PAYG & Bookkeeping
+Business Advisory / ABN
 
-          <form id="leadForm" onsubmit="handleLeadSubmit(event)">
-            <div class="form-group">
-              <label for="leadName">Full Name</label>
+Preferred Contact Time
+Anytime during business hours
+Morning (9am – 12pm)
+Afternoon (12pm – 5pm)
+
+Request SMS Callback
+EBAD Tax & Accounting | Melbourne, Victoria, Australia
+© 2026 ebad.com.au. All rights reserved.
+// 1. Dynamic ATO Due-Date Countdown Banner
+function updateATOBanner() {
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const deadlines = [
+{ name: 'Q1 BAS Lodgment & Payment (Electronic/Agent)', date: new Date('2026-11-25') },
+{ name: 'Q2 Super Guarantee Contributions Due', date: new Date('2027-01-28') },
+{ name: 'Q2 BAS Lodgment & Payment Due', date: new Date('2027-02-28') },
+{ name: 'Q3 BAS Lodgment & Payment Due', date: new Date('2027-04-28') },
+{ name: 'Tax Agent Individual & Company Tax Return Cutoff', date: new Date('2027-05-15') },
+{ name: 'End of Financial Year (2026–27) Tax Planning', date: new Date('2027-06-30') }
+];
+const upcoming = deadlines
+.map(d => ({ ...d, diffDays: Math.ceil((d.date - today) / (1000 * 60 * 60 * 24)) }))
+.filter(d => d.diffDays >= 0)
+.sort((a, b) => a.diffDays - b.diffDays);
+const bannerText = document.getElementById('ato-banner-text');
+if (upcoming.length > 0) {
+const next = upcoming[0];
+const dayStr = next.diffDays === 0 ? 'today!' : 'in ' + next.diffDays + ' day' + (next.diffDays === 1 ? '' : 's');
+const dateFormatted = next.date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+bannerText.innerHTML = 'ATO Deadline Alert: ' + next.name + ' is due ' + dayStr + ' (' + dateFormatted + '). Book your lodgment now';
+} else {
+bannerText.innerHTML = 'Need help with your Australian tax return or BAS? Book an appointment today';
+}
+}
+updateATOBanner();
+// 2. Australian Tax Refund Calculator Logic
+function calculateAustralianTax() {
+const year = document.getElementById('taxYear').value;
+const gross = Math.max(0, parseFloat(document.getElementById('grossIncome').value) || 0);
+const deductions = Math.max(0, parseFloat(document.getElementById('deductions').value) || 0);
+const withheld = Math.max(0, parseFloat(document.getElementById('taxWithheld').value) || 0);
+const taxableIncome = Math.max(0, gross - deductions);
+// 2025-26 uses 16% on $18,201-$45,000; 2026-27 drops to 15%
+const rate2 = (year === '2026-27') ? 0.15 : 0.16;
+const maxTax2 = (45000 - 18200) * rate2;
+let baseTax = 0;
+if (taxableIncome > 190000) {
+baseTax = maxTax2 + (135000 - 45000) * 0.30 + (190000 - 135000) * 0.37 + (taxableIncome - 190000) * 0.45;
+} else if (taxableIncome > 135000) {
+baseTax = maxTax2 + (135000 - 45000) * 0.30 + (taxableIncome - 135000) * 0.37;
+} else if (taxableIncome > 45000) {
+baseTax = maxTax2 + (taxableIncome - 45000) * 0.30;
+} else if (taxableIncome > 18200) {
+baseTax = (taxableIncome - 18200) * rate2;
+}
+// Low Income Tax Offset (LITO)
+let lito = 0;
+if (taxableIncome <= 37500) lito = 700;
+else if (taxableIncome <= 45000) lito = 700 - (taxableIncome - 37500) * 0.05;
+else if (taxableIncome < 66667) lito = 325 - (taxableIncome - 45000) * 0.015;
+const netIncomeTax = Math.max(0, baseTax - Math.max(0, lito));
+// Medicare Levy (2% with low-income shade-in)
+let medicareLevy = 0;
+if (taxableIncome > 35013) medicareLevy = taxableIncome * 0.02;
+else if (taxableIncome > 28011) medicareLevy = (taxableIncome - 28011) * 0.10;
+const totalTax = netIncomeTax + medicareLevy;
+const diff = withheld - totalTax;
+const fmt = function(n) { return '$' + Math.round(n).toLocaleString('en-AU'); };
+document.getElementById('resTaxable').textContent = fmt(taxableIncome);
+document.getElementById('resIncomeTax').textContent = fmt(netIncomeTax);
+document.getElementById('resMedicare').textContent = fmt(medicareLevy);
+document.getElementById('resTotalTax').textContent = fmt(totalTax);
+document.getElementById('resWithheld').textContent = fmt(withheld);
+const headline = document.getElementById('resultHeadline');
+if (diff >= 0) {
+headline.style.color = '#0f766e';
+headline.textContent = 'Estimated Refund: ' + fmt(diff);
+} else {
+headline.style.color = '#b91c1c';
+headline.textContent = 'Estimated Tax Payable: ' + fmt(Math.abs(diff));
+}
+document.getElementById('taxResultBox').style.display = 'block';
+}
+// 3. Lead Form Submission (Ready to connect to Make/Zapier/Crazytel Webhook)
+async function handleLeadSubmit(e) {
+e.preventDefault();
+const name = document.getElementById('leadName').value;
+const phone = document.getElementById('leadPhone').value;
+const service = document.getElementById('leadService').value;
+const time = document.getElementById('leadTime').value;
+// Optional: Paste your Make.com / Zapier / Webhook URL inside the quotes below to trigger real Crazytel SMS
+const WEBHOOK_URL = "";
+if (WEBHOOK_URL) {
+try {
+await fetch(WEBHOOK_URL, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({ name: name, phone: phone, service: service, time: time, source: 'ebad.com.au' })
+});
+} catch (err) {
+console.error('Webhook error:', err);
+}
+}
+const status = document.getElementById('formStatus');
+status.style.display = 'block';
+status.textContent = 'Thank you, ' + name + '! We have registered your request for ' + service + ' and will SMS ' + phone + ' shortly to confirm your appointment.';
+document.getElementById('leadForm').reset();
+}
+
+
+    </script>
+</body>
+</html>
