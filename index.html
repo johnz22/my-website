@@ -7,6 +7,8 @@
   <meta name="description" content="Fixed-fee bookkeeping, BAS lodgment and payroll for Australian sole traders and small businesses. Xero-certified. Registered tax agents. Free 30-minute review.">
   
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Calendly Assets -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
@@ -27,7 +29,8 @@
         <a href="#how-it-works">How it works</a>
         <a href="#pricing">Pricing</a>
         <a href="#calculator">Tax Estimator</a>
-        <a href="#" class="btn-nav" onclick="openLeadModal();return false;">Book a free review</a>
+        <!-- Header Nav opens Calendly -->
+        <a href="#" class="btn-nav" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;">Book a free review</a>
         <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">🌙 Dark</button>
       </nav>
     </div>
@@ -45,7 +48,8 @@
     <div class="hero-inner">
       <h1>Bookkeeping that keeps you ATO-ready — without the Sunday-night dread.</h1>
       <p>Xero-certified bookkeepers for Australian sole traders and small businesses. Catch up on BAS, clean up your books, and always know where your cash sits.</p>
-      <a href="#" class="btn btn-primary" onclick="openLeadModal();return false;">Book a free 30-minute review</a>
+      <!-- Hero opens Calendly -->
+      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;">Book a free 30-minute review</a>
       <a href="#how-it-works" class="btn btn-outline">See how it works ↓</a>
     </div>
   </section>
@@ -153,7 +157,8 @@
           <strong>How it works:</strong> We review your file for free, then give you one clear monthly price. You'll never get a surprise invoice.
         </p>
       </div>
-      <a href="#" class="btn btn-primary" onclick="openLeadModal();return false;">Get a custom quote</a>
+      <!-- Pricing opens Calendly -->
+      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;">Get a custom quote</a>
     </div>
   </section>
 
@@ -198,6 +203,7 @@
             <tr class="row-total"><td>Total Estimated Tax:</td><td id="resTotalTax"></td></tr>
             <tr><td>Less PAYG Withheld:</td><td id="resWithheld"></td></tr>
           </table>
+          <!-- Calculator result still opens the form modal -->
           <a href="#" class="btn-result" onclick="openLeadModal();return false;">Book my free review →</a>
         </div>
 
