@@ -31,7 +31,7 @@ function toggleTheme() {
   });
 })();
 
-/* ---------- 2. LEAD MODAL ---------- */
+/* ---------- 2. LEAD MODAL (SMS CALLBACK) ---------- */
 function openLeadModal() {
   const modal = document.getElementById('leadModal');
   if (!modal) return;
@@ -91,15 +91,16 @@ function updateATOBanner() {
       day: 'numeric', month: 'short', year: 'numeric'
     });
 
+    // Calendly link is back in the ATO Banner
     bannerText.innerHTML =
       '<strong>ATO Deadline Alert:</strong> ' +
       next.name +
       ' is due <strong>' + dayStr + '</strong> (' + dateFormatted + '). ' +
-      '<a href="#" onclick="openLeadModal();return false;">Book your lodgment now</a>';
+      '<a href="#" onclick="Calendly.initPopupWidget({url: \'https://calendly.com/elitebusinessad\'});return false;">Book your lodgment now</a>';
   } else {
     bannerText.innerHTML =
       'Need help with your Australian tax return or BAS? ' +
-      '<a href="#" onclick="openLeadModal();return false;">Book an appointment today</a>';
+      '<a href="#" onclick="Calendly.initPopupWidget({url: \'https://calendly.com/elitebusinessad\'});return false;">Book an appointment today</a>';
   }
 }
 updateATOBanner();
