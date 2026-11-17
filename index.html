@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EBAD Bookkeeping &amp; Tax | Xero-Certified Bookkeepers for Australians</title>
   <meta name="description" content="Fixed-fee bookkeeping, BAS lodgment and payroll for Australian sole traders and small businesses. Xero-certified. Registered tax agents. Free 30-minute review.">
+  
   <link rel="stylesheet" href="style.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -228,4 +229,42 @@
         </div>
 
         <div class="form-group">
-          <label
+          <label for="leadPhone">Australian Mobile Number</label>
+          <input type="tel" id="leadPhone" placeholder="e.g. 0412 345 678" required>
+        </div>
+
+        <div class="form-group">
+          <label for="leadService">What's the main thing you need fixed?</label>
+          <select id="leadService">
+            <option value="Catch-Up Bookkeeping">Catch-up bookkeeping (I'm behind)</option>
+            <option value="Monthly Bookkeeping">Monthly bookkeeping</option>
+            <option value="BAS & GST Lodgment">BAS &amp; GST lodgment</option>
+            <option value="Payroll & PAYG">Payroll &amp; PAYG</option>
+            <option value="Xero Setup & Migration">Xero setup / migration</option>
+            <option value="Tax Return Coordination">Tax return</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="leadTime">Preferred Contact Time</label>
+          <select id="leadTime">
+            <option value="Anytime during business hours">Anytime during business hours</option>
+            <option value="Morning (9am – 12pm)">Morning (9am – 12pm)</option>
+            <option value="Afternoon (12pm – 5pm)">Afternoon (12pm – 5pm)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Get my free books review</button>
+      </form>
+
+      <div id="formStatus"></div>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- LINK TO SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
