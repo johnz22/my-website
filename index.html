@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EBAD Tax &amp; Accounting | Australian Tax, BAS &amp; Advisory</title>
-  
-  <!-- Link to your external CSS file -->
+  <title>EBAD Bookkeeping &amp; Tax | Xero-Certified Bookkeepers for Australians</title>
+  <meta name="description" content="Fixed-fee bookkeeping, BAS lodgment and payroll for Australian sole traders and small businesses. Xero-certified. Registered tax agents. Free 30-minute review.">
+
   <link rel="stylesheet" href="style.css">
 
-  <!-- Calendly Widget Assets -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
+
 <body>
 
-  <!-- 1. DYNAMIC ATO DUE-DATE BANNER -->
+  <!-- ATO BANNER -->
   <div id="ato-banner">
     <span id="ato-banner-text">Loading upcoming Australian ATO &amp; BAS due dates...</span>
   </div>
@@ -25,155 +25,246 @@
       <a href="#" class="logo">EBAD<span>.com.au</span></a>
       <nav>
         <a href="#services">Services</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
         <a href="#calculator">Tax Estimator</a>
-        <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;">Book Appointment</a>
+        <a href="#" class="btn-nav" onclick="openLeadModal();return false;">Book a free review</a>
         <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">🌙 Dark</button>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <span>✓ Xero Certified Advisor</span>
+    <span>✓ Registered Tax Agent</span>
+    <span>✓ Fully insured</span>
+  </div>
+
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>Smart Tax, BAS &amp; Accounting Solutions for Australians</h1>
-      <p>Maximise your tax refund, stay ahead of ATO lodgment deadlines, and get fast, reliable support from our Australian team.</p>
-      <a href="#calculator" class="btn btn-primary">Estimate Your Tax Refund</a>
-      <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;" class="btn btn-outline">Book Appointment Now</a>
+      <h1>Bookkeeping that keeps you ATO-ready — without the Sunday-night dread.</h1>
+      <p>Xero-certified bookkeepers for Australian sole traders and small businesses. Catch up on BAS, clean up your books, and always know where your cash sits.</p>
+      <a href="#" class="btn btn-primary" onclick="openLeadModal();return false;">Book a free 30-minute review</a>
+      <a href="#how-it-works" class="btn btn-outline">See how it works ↓</a>
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
+  <!-- SERVICES -->
   <section id="services" class="container">
     <div class="section-title">
-      <h2>Our Core Services</h2>
-      <p>Tailored tax compliance and advisory for individuals, sole traders, and growing businesses.</p>
+      <h2>Everything your books need</h2>
+      <p>Fixed-fee bookkeeping, BAS and payroll for Australian sole traders and small businesses.</p>
     </div>
     <div class="services-grid">
       <div class="card">
-        <h3>Individual Tax Returns</h3>
-        <p>Fast, accurate income tax preparation ensuring you claim every eligible work-related deduction and offset.</p>
+        <h3>Monthly Bookkeeping</h3>
+        <p>Bank reconciliations, invoicing, and a clean set of books delivered by the 10th of every month. You always know your cash position.</p>
       </div>
       <div class="card">
-        <h3>BAS &amp; GST Lodgments</h3>
-        <p>On-time quarterly and monthly Business Activity Statements so you never miss an ATO deadline or incur penalties.</p>
+        <h3>BAS &amp; GST Lodgment</h3>
+        <p>Quarterly or monthly BAS prepared and lodged on time — with a plain-English summary of what you owe and why.</p>
       </div>
       <div class="card">
-        <h3>PAYG &amp; Bookkeeping</h3>
-        <p>Streamlined payroll, PAYG instalment management, and cloud accounting setup for stress-free cash flow.</p>
+        <h3>Payroll &amp; PAYG</h3>
+        <p>Single Touch Payroll, superannuation, and PAYG withholding handled end to end. Employees paid correctly, every time.</p>
       </div>
       <div class="card">
-        <h3>Business Structure &amp; Tax Advice</h3>
-        <p>ABN registration, company setup, and proactive tax planning tailored to Australian small businesses.</p>
+        <h3>Catch-Up Bookkeeping</h3>
+        <p>Months (or years) behind? We rebuild your file, reconcile historical accounts, and bring you current — fixed price, fixed timeline.</p>
+      </div>
+      <div class="card">
+        <h3>Xero Setup &amp; Migration</h3>
+        <p>New to Xero or moving from MYOB or QuickBooks? We set up your chart of accounts, connect bank feeds, and train you on the essentials.</p>
+      </div>
+      <div class="card">
+        <h3>Tax Return Coordination</h3>
+        <p>As registered tax agents, we prepare and lodge your individual or company return — one team, end to end, no handoffs.</p>
       </div>
     </div>
   </section>
 
-  <!-- INTERACTIVE TOOLS SECTION -->
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <div class="section-title">
+        <h2>How it works</h2>
+        <p>No hourly billing. No surprise invoices. Three simple steps.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Free 30-minute review</h3>
+          <p>We look at your Xero file (or paper trail) and tell you exactly what needs fixing — no obligation.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Fixed-fee quote</h3>
+          <p>One clear monthly price. You approve the scope before we start. No hidden costs, ever.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Monthly rhythm</h3>
+          <p>Books closed by the 10th, BAS lodged on time, a short summary in your inbox. That's it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>What clients say</h2>
+      </div>
+      <div class="testimonial-grid">
+        <blockquote class="testimonial">
+          <p>"EBAD caught up 14 months of backlog in under three weeks. The relief of finally knowing my numbers is worth every dollar."</p>
+          <footer>— Nar, sole trader, Melbourne</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"I used to spend my Sundays on Xero. Now it's 10 minutes checking a report. Best money I spend each month."</p>
+          <footer>— Nad, café owner, Geelong</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"They took the time to explain exactly how my deductions worked. I finally feel confident that my books are accurate and compliant."</p>
+          <footer>— Shar., consultant, Sydney</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+<!-- PRICING ANCHOR -->
+<section id="pricing" class="pricing-anchor">
+  <div class="container" style="text-align:center; max-width: 700px;">
+    <h2>Simple, transparent pricing</h2>
+    <p style="margin-bottom: 2rem; color: var(--text); font-size: 1.05rem;">
+      We don't do hourly billing. Every client gets a fixed monthly fee based on their specific transaction volume, payroll needs, and how much catch-up work is required.
+    </p>
+    <div style="background: var(--bg-light); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-align: left;">
+      <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">What's included in every fixed fee:</h3>
+      <ul style="list-style: none; padding: 0; margin: 0 0 1rem 0; display: grid; gap: 10px;">
+        <li style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--accent); font-weight: bold;">✓</span> All bank reconciliations and bookkeeping</li>
+        <li style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--accent); font-weight: bold;">✓</span> BAS preparation and lodgment (if required)</li>
+        <li style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--accent); font-weight: bold;">✓</span> A monthly plain-English summary of your cash position</li>
+        <li style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--accent); font-weight: bold;">✓</span> Unlimited email support for those "quick questions"</li>
+      </ul>
+      <p style="font-size: 0.9rem; color: var(--text); margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+        <strong>How it works:</strong> We review your file for free, then give you one clear monthly price. You'll never get a surprise invoice.
+      </p>
+    </div>
+    <a href="#" class="btn btn-primary" onclick="openLeadModal();return false;">Get a custom quote</a>
+  </div>
+</section>
+
+  <!-- TOOLS: CALCULATOR ONLY -->
   <section class="tools-wrapper">
     <div class="container">
-      <div class="tools-grid">
+      <div id="calculator" class="widget-box" style="max-width: 640px; margin: 0 auto;">
+        <h3>Australian Tax Refund Estimator</h3>
+        <p class="sub">Calculate your estimated refund or tax payable for Australian residents.</p>
 
-        <!-- LEFT COLUMN: AUSTRALIAN TAX REFUND ESTIMATOR -->
-        <div id="calculator" class="widget-box">
-          <h3>Australian Tax Refund Estimator</h3>
-          <p class="sub">Calculate your estimated refund or tax payable for Australian residents.</p>
-
-          <div class="form-group">
-            <label for="taxYear">Financial Year</label>
-            <select id="taxYear">
-              <option value="2026-27" selected>2026–27 (1 July 2026 – 30 June 2027)</option>
-              <option value="2025-26">2025–26 (1 July 2025 – 30 June 2026)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="grossIncome">Gross Annual Income ($ AUD)</label>
-            <input type="number" id="grossIncome" placeholder="e.g. 85000" min="0" step="100">
-          </div>
-
-          <div class="form-group">
-            <label for="deductions">Total Work Deductions ($ AUD)</label>
-            <input type="number" id="deductions" placeholder="e.g. 1200" min="0" step="50" value="0">
-          </div>
-
-          <div class="form-group">
-            <label for="taxWithheld">PAYG Tax Already Withheld ($ AUD)</label>
-            <input type="number" id="taxWithheld" placeholder="e.g. 18500" min="0" step="100">
-          </div>
-
-          <button type="button" onclick="calculateAustralianTax()" class="btn btn-primary" style="width: 100%;">Calculate Estimate</button>
-
-          <div id="taxResultBox">
-            <div id="resultHeadline"></div>
-            <table class="res-table">
-              <tr><td>Taxable Income:</td><td id="resTaxable"></td></tr>
-              <tr><td>Income Tax (after LITO):</td><td id="resIncomeTax"></td></tr>
-              <tr><td>Medicare Levy (2%):</td><td id="resMedicare"></td></tr>
-              <tr style="border-top: 1px solid #cbd5e1;"><td>Total Estimated Tax:</td><td id="resTotalTax"></td></tr>
-              <tr><td>Less PAYG Withheld:</td><td id="resWithheld"></td></tr>
-            </table>
-            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/elitebusinessad'});return false;" class="btn" style="display: block; text-align: center; margin-top: 1rem; background: #0f172a; color: #fff; font-size: 0.9rem;">
-              Maximise This Refund — Book via Calendly
-            </a>
-          </div>
-
-          <p class="disclaimer">
-            Disclaimer: Estimate only for Australian tax residents. Includes Low Income Tax Offset (LITO) and 2% Medicare levy; excludes HELP/HECS repayments and Medicare Levy Surcharge.
-          </p>
+        <div class="form-group">
+          <label for="taxYear">Financial Year</label>
+          <select id="taxYear">
+            <option value="2026-27" selected>2026–27 (1 July 2026 – 30 June 2027)</option>
+            <option value="2025-26">2025–26 (1 July 2025 – 30 June 2026)</option>
+          </select>
         </div>
 
-        <!-- RIGHT COLUMN: SMS CALLBACK FORM -->
-        <div id="contact-form" class="widget-box">
-          <h3>Book an Appointment via SMS</h3>
-          <p class="sub">Leave your details below. You will receive an instant confirmation and our team will contact you.</p>
-
-          <form id="leadForm" onsubmit="handleLeadSubmit(event)">
-            <div class="form-group">
-              <label for="leadName">Full Name</label>
-              <input type="text" id="leadName" placeholder="e.g. Sarah Smith" required>
-            </div>
-
-            <div class="form-group">
-              <label for="leadPhone">Australian Mobile Number</label>
-              <input type="tel" id="leadPhone" placeholder="e.g. 0412 345 678" required>
-            </div>
-
-            <div class="form-group">
-              <label for="leadService">What do you need help with?</label>
-              <select id="leadService">
-                <option value="Individual Tax Return">Individual Tax Return</option>
-                <option value="Quarterly / Monthly BAS">Quarterly / Monthly BAS</option>
-                <option value="PAYG &amp; Bookkeeping">PAYG &amp; Bookkeeping</option>
-                <option value="Business Advisory / ABN">Business Advisory / ABN</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="leadTime">Preferred Contact Time</label>
-              <select id="leadTime">
-                <option value="Anytime during business hours">Anytime during business hours</option>
-                <option value="Morning (9am – 12pm)">Morning (9am – 12pm)</option>
-                <option value="Afternoon (12pm – 5pm)">Afternoon (12pm – 5pm)</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Request SMS Callback</button>
-          </form>
-
-          <div id="formStatus" style="display: none; margin-top: 1rem; padding: 0.85rem; border-radius: 6px; background: #f0fdfa; border: 1px solid #0f766e; color: #115e59; font-weight: 600; font-size: 0.9rem;"></div>
+        <div class="form-group">
+          <label for="grossIncome">Gross Annual Income ($ AUD)</label>
+          <input type="number" id="grossIncome" placeholder="e.g. 85000" min="0" step="100">
         </div>
 
+        <div class="form-group">
+          <label for="deductions">Total Work Deductions ($ AUD)</label>
+          <input type="number" id="deductions" placeholder="e.g. 1200" min="0" step="50" value="0">
+        </div>
+
+        <div class="form-group">
+          <label for="taxWithheld">PAYG Tax Already Withheld ($ AUD)</label>
+          <input type="number" id="taxWithheld" placeholder="e.g. 18500" min="0" step="100">
+        </div>
+
+        <button type="button" onclick="calculateAustralianTax()" class="btn btn-primary" style="width: 100%;">Estimate my refund</button>
+
+        <div id="taxResultBox">
+          <div id="resultHeadline"></div>
+          <table class="res-table">
+            <tr><td>Taxable Income:</td><td id="resTaxable"></td></tr>
+            <tr><td>Income Tax (after LITO):</td><td id="resIncomeTax"></td></tr>
+            <tr><td>Medicare Levy (2%):</td><td id="resMedicare"></td></tr>
+            <tr class="row-total"><td>Total Estimated Tax:</td><td id="resTotalTax"></td></tr>
+            <tr><td>Less PAYG Withheld:</td><td id="resWithheld"></td></tr>
+          </table>
+          <a href="#" class="btn-result" onclick="openLeadModal();return false;">Book my free review →</a>
+        </div>
+
+        <p class="disclaimer">
+          Disclaimer: Estimate only for Australian tax residents. Includes Low Income Tax Offset (LITO) and 2% Medicare levy; excludes HELP/HECS repayments and Medicare Levy Surcharge.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p><strong>EBAD Tax &amp; Accounting</strong> | Melbourne, Victoria, Australia</p>
+    <p><strong>EBAD Bookkeeping &amp; Tax</strong> | Melbourne, Victoria, Australia</p>
+    <p class="footer-creds">Xero Certified Advisor · Registered Tax Agent · Fully insured</p>
     <p>&copy; 2026 ebad.com.au. All rights reserved.</p>
   </footer>
 
-  <!-- Link to your external JavaScript file -->
+  <!-- ===================== -->
+  <!-- LEAD FORM MODAL -->
+  <!-- ===================== -->
+  <div id="leadModal" class="modal-overlay" onclick="if(event.target===this)closeLeadModal()" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+      <button class="modal-close" onclick="closeLeadModal()" aria-label="Close">✕</button>
+      <h3 id="leadModalTitle">Book a free 30-minute review</h3>
+      <p class="sub">Tell us where to reach you. We'll text within one business day — no sales calls.</p>
+
+      <form id="leadForm" onsubmit="handleLeadSubmit(event)">
+        <div class="form-group">
+          <label for="leadName">Full Name</label>
+          <input type="text" id="leadName" placeholder="e.g. Sarah Smith" required>
+        </div>
+
+        <div class="form-group">
+          <label for="leadPhone">Australian Mobile Number</label>
+          <input type="tel" id="leadPhone" placeholder="e.g. 0412 345 678" required>
+        </div>
+
+        <div class="form-group">
+          <label for="leadService">What's the main thing you need fixed?</label>
+          <select id="leadService">
+            <option value="Catch-Up Bookkeeping">Catch-up bookkeeping (I'm behind)</option>
+            <option value="Monthly Bookkeeping">Monthly bookkeeping</option>
+            <option value="BAS & GST Lodgment">BAS &amp; GST lodgment</option>
+            <option value="Payroll & PAYG">Payroll &amp; PAYG</option>
+            <option value="Xero Setup & Migration">Xero setup / migration</option>
+            <option value="Tax Return Coordination">Tax return</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="leadTime">Preferred Contact Time</label>
+          <select id="leadTime">
+            <option value="Anytime during business hours">Anytime during business hours</option>
+            <option value="Morning (9am – 12pm)">Morning (9am – 12pm)</option>
+            <option value="Afternoon (12pm – 5pm)">Afternoon (12pm – 5pm)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Get my free books review</button>
+      </form>
+
+      <div id="formStatus"></div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to top" title="Back to top">↑</button>
 </body>
 </html>
