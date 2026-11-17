@@ -11,11 +11,10 @@
   --dark: #0f172a;
   --text: #475569;
   
-  /* NEW: Warm, premium cream palette */
-  --bg: #fdfbf7;          /* Warm off-white for the main page */
-  --bg-light: #f4f0e6;    /* Deeper cream for alternating sections */
-  --surface: #ffffff;     /* Pure white for the cards to make them pop */
-  --border: #e8e2d5;      /* Warm border instead of stark grey */
+  --bg: #fdfbf7;
+  --bg-light: #f4f0e6;
+  --surface: #ffffff;
+  --border: #e8e2d5;
   --input-bg: #ffffff;
 }
 
@@ -24,7 +23,7 @@
   --primary-dark: #38bdf8;
   --accent: #e0b45f;
   --accent-dark: #c8963e;
-  --dark: #f8fafc; /* THIS makes the text white in dark mode */
+  --dark: #f8fafc;
   --text: #cbd5e1;
   --bg: #0b1120;
   --bg-light: #0f172a;
@@ -50,7 +49,7 @@ body {
 h1, h2, h3 {
   font-family: "Fraunces", Georgia, serif;
   letter-spacing: -0.3px;
-  color: var(--dark); /* This will now correctly be navy in light mode, white in dark mode */
+  color: var(--dark);
 }
 
 /* ============================================
@@ -163,7 +162,6 @@ nav a:hover { color: var(--primary); }
    HERO
    ============================================ */
 .hero {
-  /* A soft cream-to-white gradient that glows in the center */
   background: radial-gradient(ellipse at top, #ffffff 0%, var(--bg) 100%);
   padding: 6rem 1.5rem 5rem;
   text-align: center;
@@ -238,11 +236,9 @@ nav a:hover { color: var(--primary); }
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.75rem;
-  /* Warmer, softer shadow */
   box-shadow: 0 4px 20px rgba(30, 58, 95, 0.04);
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
-/* Make the hover state a bit more premium */
 .card:hover { 
   transform: translateY(-4px); 
   border-color: var(--accent);
@@ -328,7 +324,6 @@ nav a:hover { color: var(--primary); }
   font-size: 0.95rem;
   line-height: 1.55;
 }
-/* Fixed testimonial footer style */
 .testimonial footer {
   background: transparent !important;
   color: var(--dark) !important;
@@ -339,7 +334,7 @@ nav a:hover { color: var(--primary); }
 }
 
 /* ============================================
-   PRICING ANCHOR (Fixed for Light Mode)
+   PRICING ANCHOR
    ============================================ */
 .pricing-anchor {
   padding: 3.5rem 1.5rem;
@@ -358,7 +353,7 @@ nav a:hover { color: var(--primary); }
 }
 
 /* ============================================
-   TOOLS: CALCULATOR (Fixed for Light Mode)
+   TOOLS: CALCULATOR
    ============================================ */
 .tools-wrapper {
   background: var(--bg-light) !important;
@@ -418,7 +413,6 @@ nav a:hover { color: var(--primary); }
   box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
 }
 
-/* Calculator results */
 #taxResultBox {
   display: none;
   margin-top: 1.25rem;
@@ -464,7 +458,7 @@ nav a:hover { color: var(--primary); }
 }
 
 /* ============================================
-   FOOTER (Main Website Footer)
+   FOOTER
    ============================================ */
 footer {
   background: #0f172a;
@@ -566,18 +560,14 @@ footer strong { color: #ffffff; }
 #back-to-top:active { transform: translateY(0); }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE (Fixed bracket issue here)
    ============================================ */
 @media (max-width: 640px) {
   .hero { padding: 3.5rem 1.25rem; }
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
   .hero .btn-outline { margin-left: 0; margin-top: 0.75rem; display: inline-block; }
-  .section-title h2 {
-  color: var(--dark);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
+  .section-title h2 { font-size: 1.65rem; }
   nav { gap: 1rem; }
   nav a { font-size: 0.85rem; }
   .btn-nav { padding: 0.45rem 0.85rem; }
