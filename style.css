@@ -533,3 +533,44 @@ footer strong { color: #ffffff; }
 [data-theme="dark"] #formStatus { background: #0d2b2a; border-color: #14b8a6; color: #5eead4; }
 
 /* =================================
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+#back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #0f172a;
+  font-size: 1.35rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.25);
+  z-index: 900;
+  transition: background 0.2s, transform 0.2s, opacity 0.3s;
+}
+#back-to-top.visible { 
+  display: flex !important; 
+  opacity: 1; 
+}
+#back-to-top:hover { 
+  background: var(--accent-dark); 
+  color: #ffffff; 
+  transform: translateY(-3px); 
+}
+
+
+
+
+
+
+
+
